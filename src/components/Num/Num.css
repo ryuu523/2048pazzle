@@ -1,0 +1,44 @@
+.num{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    line-height: 91px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+    
+}
+.purple{
+    background-color: purple;
+}
+.indigo{
+    background-color: indigo;
+}
+.blue{
+    background-color: rgb(59, 59, 255);
+}
+.skyblue{
+    background-color: skyblue;
+}
+.yellowgreen{
+    background-color: yellowgreen;
+}
+.yellow{
+    background-color: yellow;
+}
+.orange{
+    background-color: orange;
+}
+.red{
+    background-color: red;
+}
+.pink{
+    background-color: pink;
+}
+.white{
+    color: white;
+    background-color: rgb(34, 34, 34);
+}
+.rainbow{
+    background: linear-gradient(90deg, #4158D0, #C850C0 30%, #FFCC70);
+
+}

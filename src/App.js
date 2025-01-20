@@ -1,25 +1,55 @@
-import logo from './logo.svg';
+import { useEffect } from "react";
 import './App.css';
+import useField from "./hooks/useField";
+import Cell from "./components/Cell/Cell";
 
-function App() {
+export default function App() {
+  const { field, endFlag, initFlag, crearFlag, moveUp, moveDown, moveLeft, moveRight } = useField([])
+
+
+
+  const handleKeyDown = (e) => {
+    if (initFlag.current) {
+      switch (e.key) {
+
+        case "ArrowUp":
+          moveUp()
+          break
+
+        case "ArrowDown":
+          moveDown()
+          break
+
+        case "ArrowLeft":
+          moveLeft()
+          break
+
+        case "ArrowRight":
+          moveRight()
+          break
+        default:
+          break
+      }
+    }
+  }
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown)
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown)
+    }
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="center">
+      <div className="field">
+        {field.map((cells, y) => {
+          return cells.map((number, x) => {
+            return <Cell num={number} key={y + ":" + x}></Cell>
+          })
+        })
+        }
+      </div>
+      {endFlag ? <div className="end">GAMEOVER</div> : <></>}
+      {crearFlag ? <div className="crear">CREAR</div> : <></>}
     </div>
   );
 }
-
-export default App;
