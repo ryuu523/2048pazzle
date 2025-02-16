@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import './App.css';
 import useField from "./hooks/useField";
@@ -32,7 +33,6 @@ export default function App() {
       }
     }
   }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown)
     return () => {

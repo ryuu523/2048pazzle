@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useRef, useState } from "react";
 
 export default function useField() {
@@ -201,7 +202,7 @@ export default function useField() {
     useEffect(() => {
         init()
     }, [])
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+   
     useEffect(() => {
         if (initFlagRef.current && !field.length === 0) {
             const movableArray = [...Array(4)].fill(false)
